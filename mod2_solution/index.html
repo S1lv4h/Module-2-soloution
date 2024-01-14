@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,16 +8,20 @@
         /* Base styles for all views */
         body {
             text-align: center; /* Center the title */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
         }
         .section {
             box-sizing: border-box;
             padding: 40px 10px 10px; /* Increased top padding to avoid overlap */
+            margin-bottom: 20px; /* Add margin for separation */
             position: relative; /* Relative positioning for the headings */
+            background-color: #f0f0f0; /* Light background for sections */
         }
         .section h2 {
             position: absolute;
-            top: 0;
-            right: 0;
+            top: 10px; /* Adjust top position */
+            right: 10px; /* Adjust right position */
             margin: 0;
             padding: 5px;
             z-index: 2; /* Ensure the heading is above the paragraph */
@@ -37,25 +40,31 @@
         @media screen and (min-width: 992px) {
             .section {
                 float: left;
-                width: 33.33%;
+                width: calc(33.33% - 20px); /* Adjust width to account for margin */
+                margin-right: 20px; /* Right margin for spacing */
+            }
+            .section:last-child {
+                margin-right: 0; /* Remove right margin for the last section */
             }
         }
 
         /* Tablet View */
         @media screen and (max-width: 991px) and (min-width: 768px) {
             .section {
-                width: 50%;
+                width: calc(50% - 20px); /* Adjust width to account for margin */
+                float: left;
             }
-            .section:last-child {
-                width: 100%;
-                clear: both;
+            .section:nth-child(2n) {
+                margin-right: 0; /* Remove right margin for every second section */
             }
         }
 
         /* Mobile View */
         @media screen and (max-width: 767px) {
             .section {
-                width: 100%;
+                width: auto; /* Auto width for mobile */
+                float: none; /* Clear floats for mobile */
+                margin-right: 0; /* Remove right margin for mobile */
             }
         }
     </style>
@@ -66,30 +75,15 @@
     <!-- Sections -->
     <div class="section" style="background-color: lightblue;">
         <h2>Chicken</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet...</p>
     </div>
     <div class="section" style="background-color: lightgreen;">
         <h2>Beef</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet...</p>
     </div>
     <div class="section" style="background-color: lightcoral;">
         <h2>Sushi</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet...</p>
     </div>
 
 </body>
