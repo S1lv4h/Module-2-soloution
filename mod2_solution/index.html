@@ -17,6 +17,7 @@
             margin-bottom: 20px; /* Add margin for separation */
             position: relative; /* Relative positioning for the headings */
             background-color: #f0f0f0; /* Light background for sections */
+            border: 1px solid black; /* Black border for sections */
         }
         .section h2 {
             position: absolute;
@@ -25,9 +26,8 @@
             margin: 0;
             padding: 5px;
             z-index: 2; /* Ensure the heading is above the paragraph */
-        }
-        .section:nth-child(1) h2 {
-            background-color: yellow;
+            background-color: yellow; /* Default background color for headings */
+            border: 1px solid black; /* Black border for headings */
         }
         .section:nth-child(2) h2 {
             background-color: orange;
@@ -88,3 +88,4 @@
 
 </body>
 </html>
+
