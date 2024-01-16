@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Our Menu</title>
+    <style>
+        /* Base styles for all views */
+        body {
+            text-align: center; /* Center the title */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+        .section {
+            box-sizing: border-box;
+            padding: 40px 10px 10px; /* Increased top padding to avoid overlap */
+            margin-bottom: 20px; /* Add margin for separation */
+            position: relative; /* Relative positioning for the headings */
+            background-color: #f0f0f0; /* Light background for sections */
+            border: 1px solid black; /* Black border for sections */
+        }
+        .section h2 {
+            position: absolute;
+            top: 10px; /* Adjust top position */
+            right: 10px; /* Adjust right position */
+            margin: 0;
+            padding: 5px;
+            z-index: 2; /* Ensure the heading is above the paragraph */
+            background-color: yellow; /* Default background color for headings */
+            border: 1px solid black; /* Black border for headings */
+        }
+        .section:nth-child(2) h2 {
+            background-color: orange;
+        }
+        .section:nth-child(3) h2 {
+            background-color: violet;
+        }
+
+        /* Desktop View */
+        @media screen and (min-width: 992px) {
+            .section {
+                float: left;
+                width: calc(33.33% - 20px); /* Adjust width to account for margin */
+                margin-right: 20px; /* Right margin for spacing */
+            }
+            .section:last-child {
+                margin-right: 0; /* Remove right margin for the last section */
+            }
+        }
+
+        /* Tablet View */
+        @media screen and (max-width: 991px) and (min-width: 768px) {
+            .section {
+                width: calc(50% - 20px); /* Adjust width to account for margin */
+                float: left;
+            }
+            .section:nth-child(2n) {
+                margin-right: 0; /* Remove right margin for every second section */
+            }
+        }
+
+        /* Mobile View */
+        @media screen and (max-width: 767px) {
+            .section {
+                width: auto; /* Auto width for mobile */
+                float: none; /* Clear floats for mobile */
+                margin-right: 0; /* Remove right margin for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Menu</h1>
+
+    <!-- Sections -->
+    <div class="section" style="background-color: lightblue;">
+        <h2>Chicken</h2>
+        <p>Lorem ipsum dolor sit amet...</p>
+    </div>
+    <div class="section" style="background-color: lightgreen;">
+        <h2>Beef</h2>
+        <p>Lorem ipsum dolor sit amet...</p>
+    </div>
+    <div class="section" style="background-color: lightcoral;">
+        <h2>Sushi</h2>
+        <p>Lorem ipsum dolor sit amet...</p>
+    </div>
+
+</body>
+</html>
+
